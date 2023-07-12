@@ -21,4 +21,5 @@ from app.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('django_form/',django_form,name='django_form'),
+    path('stud_form/',stud_form,name='stud_form'),
 ]

@@ -19,3 +19,15 @@ def django_form(request):
             SO.save()
             return HttpResponse(str(SFDT.cleaned_data))
     return render(request,'django_form.html',d)
+
+def stud_form(request):
+    SFO=Student_Form()
+    d={'SFO':SFO}
+    if request.method=='POST':
+        SFD=Student_Form(request.POST)
+        if SFD.is_valid():
+            return HttpResponse(str(SFD.cleaned_data))
+        else:
+            return HttpResponse('INvalid data')
+        
+    return render(request,'sf.html',d)
